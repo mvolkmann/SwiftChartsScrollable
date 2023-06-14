@@ -87,6 +87,7 @@ struct ContentView: View {
             }
             .chartXSelection(value: $rawSelectedDate)
             // Annotations stop working when this is present!
+            // See https://feedbackassistant.apple.com/feedback/12348843.
             .chartScrollableAxes(.horizontal)
             .padding(.top, 40) // leaves room for annotations
         }
