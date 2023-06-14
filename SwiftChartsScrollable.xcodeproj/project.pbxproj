@@ -11,6 +11,7 @@
 		1A1AB24D2A3A5249004FA08A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AB24C2A3A5249004FA08A /* ContentView.swift */; };
 		1A1AB24F2A3A524B004FA08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AB24E2A3A524B004FA08A /* Assets.xcassets */; };
 		1A1AB2522A3A524B004FA08A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AB2512A3A524B004FA08A /* Preview Assets.xcassets */; };
+		1A1AB2592A3A5404004FA08A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AB2582A3A5404004FA08A /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1A1AB24C2A3A5249004FA08A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A1AB24E2A3A524B004FA08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A1AB2512A3A524B004FA08A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A1AB2582A3A5404004FA08A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				1A1AB24A2A3A5249004FA08A /* SwiftChartsScrollableApp.swift */,
 				1A1AB24C2A3A5249004FA08A /* ContentView.swift */,
+				1A1AB2582A3A5404004FA08A /* DateExtension.swift */,
 				1A1AB24E2A3A524B004FA08A /* Assets.xcassets */,
 				1A1AB2502A3A524B004FA08A /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1AB24D2A3A5249004FA08A /* ContentView.swift in Sources */,
+				1A1AB2592A3A5404004FA08A /* DateExtension.swift in Sources */,
 				1A1AB24B2A3A5249004FA08A /* SwiftChartsScrollableApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
