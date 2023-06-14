@@ -26,6 +26,7 @@ private func generateStocks() -> [Stock] {
 
 struct ContentView: View {
     @State private var rawSelectedDate: Date?
+    @State private var scrollX = 0.0
     private let stocks = generateStocks()
 
     private let dateFormatter = DateFormatter()
@@ -35,7 +36,6 @@ struct ContentView: View {
     }
 
     private func annotation(for stock: Stock) -> some View {
-        print("annotation: stock =", stock)
         let date = dateFormatter.string(from: stock.date)
         return VStack(alignment: .leading) {
             Text(date)
@@ -73,6 +73,8 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            // TODO: What does this value mean?
+            Text("scrollX = \(scrollX)")
             Chart(stocks) { stock in
                 LineMark(
                     x: .value("Date", stock.date),
@@ -85,10 +87,16 @@ struct ContentView: View {
                     ruleMark(selectedDate: rawSelectedDate)
                 }
             }
-            .chartXSelection(value: $rawSelectedDate)
+            // .chartXSelection(value: $rawSelectedDate)
+
             // Annotations stop working when this is present!
             // See https://feedbackassistant.apple.com/feedback/12348843.
             .chartScrollableAxes(.horizontal)
+
+            .chartXVisibleDomain(length: 30 * 24 * 60 * 60) // sec. in 30 days
+
+            .chartScrollPosition(x: $scrollX)
+
             .padding(.top, 40) // leaves room for annotations
         }
         .padding()
