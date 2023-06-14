@@ -74,6 +74,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             // TODO: What does this value mean?
+            // TODO: How can this value be associated with a stock?
             Text("scrollX = \(scrollX)")
             Chart(stocks) { stock in
                 LineMark(
