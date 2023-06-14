@@ -61,13 +61,10 @@ struct ContentView: View {
             .zIndex(-1) // behind LineMarks and PointMarks
             .annotation(
                 position: .top, // above chart
-                spacing: 0,
-                // between top of RuleMark & annotation
+                spacing: 0, // between top of RuleMark & annotation
                 overflowResolution: .init(
-                    x: .fit(to: .chart),
-                    // prevents horizontal spill
-                    y: .disabled // allows annotation above
-                    // chart
+                    x: .fit(to: .chart), // prevents horizontal spill
+                    y: .disabled // allows annotation above chart
                 )
             ) {
                 annotation(for: stock)
@@ -78,17 +75,19 @@ struct ContentView: View {
         VStack {
             Chart(stocks) { stock in
                 LineMark(
-                    x: .value("date", stock.date),
-                    y: .value("price", stock.price)
+                    x: .value("Date", stock.date),
+                    y: .value("Price", stock.price)
                 )
                 .foregroundStyle(.red)
+                .interpolationMethod(.catmullRom)
 
                 if let rawSelectedDate {
                     ruleMark(selectedDate: rawSelectedDate)
                 }
             }
-            .chartScrollableAxes(.horizontal)
             .chartXSelection(value: $rawSelectedDate)
+            // Annotations stop working when this is present!
+            .chartScrollableAxes(.horizontal)
             .padding(.top, 40) // leaves room for annotations
         }
         .padding()
